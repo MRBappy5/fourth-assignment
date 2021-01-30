@@ -36,7 +36,7 @@
         </div>
 
 
-        <div class="booking-form">
+        <div id="ticket-form" class="booking-form">
             <h3>Book Ocean Time</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
@@ -105,9 +105,15 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="booking" class="btn-style">Book Now</button>
         </div>
     </main>
+    <section id="pop-up">
+        <div>
+            <h3>Hey, <br> You have successfully bought your tickets</h3>
+            <h3>You have been charged $ <span id="pop-total">00</span></h3>
+        </div>
+    </section>
     <script>
 
         function handleTicketCount(ticket, isIncrease){
@@ -141,6 +147,16 @@
             const ticketCount = parseInt(ticketInput.value);
             return ticketCount;
         }
+
+        document.getElementById('booking').addEventListener('click', function(){
+            const popUp = document.getElementById('pop-up');
+            popUp.style.display = 'block';
+            const totalAmount = document.getElementById('total-amount');
+            const popTotal = document.getElementById('pop-total');
+            const popNewTotal = parseFloat(popTotal.innerText); 
+            popNewTotal.innerText = totalAmount;
+
+        })
         
 
         // function handleFirstValue(isIncrease){
