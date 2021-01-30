@@ -110,7 +110,7 @@
     </main>
     <section id="pop-up">
         <div>
-            <h3>Hey, <br> You have successfully bought your tickets</h3>
+            <h3>Hey, <br> <br> You have successfully bought your tickets</h3><br> <hr><br>
             <h3>You have been charged $ <span id="pop-total">00</span></h3>
         </div>
     </section>
@@ -147,43 +147,23 @@
             const ticketCount = parseInt(ticketInput.value);
             return ticketCount;
         }
-
+       
         document.getElementById('booking').addEventListener('click', function(){
             const popUp = document.getElementById('pop-up');
             popUp.style.display = 'block';
-            const totalAmount = document.getElementById('total-amount');
-            const popTotal = document.getElementById('pop-total');
-            const popNewTotal = parseFloat(popTotal.innerText); 
+            const totalAmount = document.getElementById('total-amount').innerText;
+            // console.log(totalAmount);
+            
+            const popTotal = document.getElementById('pop-total').innerText;
+            const popNewTotal = parseFloat(popTotal);
+            // console.log(popNewTotal);
+            // const finale = totalNewAmount + popNewTotal;
+            // console.log(finale);
             popNewTotal.innerText = totalAmount;
 
         })
         
-
-        // function handleFirstValue(isIncrease){
-        //     const firstInput = document.getElementById('first-input');
-        //     const firstCount = parseInt(firstInput.value);
-        //     let firstNewCount = firstCount;
-        //     if(isIncrease == true){
-        //         firstNewCount = firstCount + 1;
-        //     }
-        //     if(isIncrease == false && firstCount >0){
-        //         firstNewCount = firstCount - 1;
-        //     }
-        //     firstInput.value = firstNewCount;
-        // }
-
-        // function handleEconomyValue(isIncrease){
-        //     const secondInput = document.getElementById('second-input');
-        //     const secondCount = parseInt(secondInput.value);
-        //     let secondNewCount = secondCount;
-        //     if(isIncrease == true){
-        //         secondNewCount = secondCount + 1;
-        //     }
-        //     if(isIncrease == false && secondCount >0){
-        //         secondNewCount = secondCount - 1;
-        //     }
-        //     secondInput.value = secondNewCount;
-        // }
+       
     </script>
     <!--Thank You-->
 </body>
